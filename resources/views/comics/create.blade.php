@@ -11,7 +11,8 @@
 
             <h2 class="mb-4">Add Comic</h2>
 
-            <form action="" method="GET">
+            <form action="{{ route('comics.store') }}" method="POST">
+                @csrf
                 <div class="row">
                     <div class="col-6">
                         <div class="mb-3">
