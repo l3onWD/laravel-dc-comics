@@ -30,8 +30,8 @@ Route::get('/comics', function () {
     $comics = config('data.comics');
     $cta_cards = config('data.cta_cards');
 
-    return view('comics.list', ['comics' => $comics, 'cta_cards' => $cta_cards]);
-})->name('comics.list');
+    return view('comics.index', ['comics' => $comics, 'cta_cards' => $cta_cards]);
+})->name('comics.index');
 
 
 
@@ -49,5 +49,5 @@ Route::get('/comics/{index}', function ($index) {
     if ($index > 0) $data['prev'] = $index - 1;
     if ($index < $last_index) $data['next'] = $index + 1;
 
-    return view('comics.detail', $data);
-})->name('comics.detail');
+    return view('comics.show', $data);
+})->name('comics.show');

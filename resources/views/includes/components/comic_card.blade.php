@@ -1,4 +1,4 @@
-<a href="{{ route('comics.detail', $loop->index) }}" class="comic-card">
+<a href="{{ route('comics.show', $loop->index) }}" class="comic-card">
     <figure class="card-img">
         <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
     </figure>

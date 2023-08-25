@@ -15,7 +15,7 @@
                 <ul>
                     <li>
                         @isset($prev)
-                            <a href="{{ route('comics.detail', $prev) }}">
+                            <a href="{{ route('comics.show', $prev) }}">
                                 <i class="fas fa-angle-left"></i>
                                 Previous Comic
                             </a>
@@ -23,7 +23,7 @@
                     </li>
                     <li>
                         @isset($next)
-                            <a href="{{ route('comics.detail', $next) }}">
+                            <a href="{{ route('comics.show', $next) }}">
                                 Next Comic
                                 <i class="fas fa-angle-right"></i>
                             </a>
