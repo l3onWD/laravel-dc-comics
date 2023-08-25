@@ -13,6 +13,41 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* -----------------------------------------
+* HOME
+-------------------------------------------*/
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
+
+
+/* -----------------------------------------
+* COMICS
+-------------------------------------------*/
+
+Route::get('/comics', function () {
+    $comics = config('data.comics');
+    $cta_cards = config('data.cta_cards');
+
+    return view('comics.list', ['comics' => $comics, 'cta_cards' => $cta_cards]);
+})->name('comics.list');
+
+
+
+/* -----------------------------------------
+* COMIC
+-------------------------------------------*/
+Route::get('/comics/{index}', function ($index) {
+
+    $comics = config('data.comics');
+    $comic_actions_dropmenu = config('data.dropmenu_links')['comic_availability'];
+    $last_index = count($comics) - 1;
+
+    $data['comic'] = $comics[$index];
+    $data['comic_actions_dropmenu'] = $comic_actions_dropmenu;
+    if ($index > 0) $data['prev'] = $index - 1;
+    if ($index < $last_index) $data['next'] = $index + 1;
+
+    return view('comics.detail', $data);
+})->name('comics.detail');
