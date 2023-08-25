@@ -25,8 +25,13 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 /* -----------------------------------------
 * COMICS
 -------------------------------------------*/
+Route::prefix('/comics')
+    ->controller(ComicController::class)
+    ->name('comics.')
+    ->group(function () {
 
-Route::get('/comics', [ComicController::class, 'index'])->name('comics.index');
-Route::get('/comics/create', [ComicController::class, 'create'])->name('comics.create');
-Route::get('/comics/{comic}', [ComicController::class, 'show'])->name('comics.show');
-Route::post('/comics', [ComicController::class, 'store'])->name('comics.store');
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::get('/{comic}', 'show')->name('show');
+        Route::post('/', 'store')->name('store');
+    });
