@@ -1,0 +1,45 @@
+/* -----------------------------------------
+* DROPMENU
+-------------------------------------------*/
+@use '../vars' as *;
+
+.dropmenu {
+    position: relative;
+
+    .dropmenu-toggler {
+        padding: 0;
+
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+    }
+
+    .dropmenu-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        display: none;
+        color: #000;
+        background-color: #fff;
+        text-align: left;
+
+        box-shadow: 0 0 8px 2px rgba($color: #000, $alpha: 0.2);
+        z-index: 1;
+
+        a {
+            padding: 1rem;
+            min-width: 100px;
+
+            display: block;
+
+            &:hover {
+                color: $col-blue;
+            }
+        }
+    }
+
+    .dropmenu-content.show {
+        display: block;
+    }
+}

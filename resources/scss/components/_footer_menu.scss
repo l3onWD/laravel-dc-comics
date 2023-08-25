@@ -1,0 +1,14 @@
+/* -----------------------------------------
+* FOOTER MENU
+-------------------------------------------*/
+@use '../vars' as *;
+
+
+.footer-menu a {
+    padding: .18rem 0;
+    display: block;
+
+    &:hover {
+        color: $col-blue;
+    }
+}

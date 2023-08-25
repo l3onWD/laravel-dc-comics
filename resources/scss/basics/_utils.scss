@@ -1,0 +1,100 @@
+/* -----------------------------------------
+* UTILS
+-------------------------------------------*/
+@use '../vars' as *;
+
+/*** COLORS ***/
+.text-blue {
+    color: $col-blue;
+}
+
+.text-lightgreen {
+    color: $col-lightgreen;
+}
+
+.text-gray {
+    color: $col-gray;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.text-dark {
+    color: $col-dark;
+}
+
+.bg-blue {
+    background-color: $col-blue;
+}
+
+.bg-green {
+    background-color: $col-green;
+}
+
+.bg-lightgray {
+    background-color: $col-lightgray;
+}
+
+.bg-darkgray {
+    background-color: $col-darkgray;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+
+/*** TEXT ***/
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+
+/*** DISPLAY ***/
+.d-none {
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+
+/*** FLEX ***/
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+
+/* -----------------------------------------
+* RESPONSIVE
+-------------------------------------------*/
+@each $bp,
+$val in $breakpoints {
+    @media screen and (min-width: $val) {
+        .d-#{$bp}-none {
+            display: none
+        }
+    }
+}

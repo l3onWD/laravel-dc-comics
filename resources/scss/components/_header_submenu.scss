@@ -1,0 +1,33 @@
+/* -----------------------------------------
+* HEADER SUBMENU
+-------------------------------------------*/
+@use '../vars' as *;
+
+
+.header-submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: max-content;
+
+    display: none;
+    background-color: #fff;
+    box-shadow: 0 0 8px 2px rgba($color: #000, $alpha: 0.2);
+
+    a {
+        padding: 1rem;
+
+        display: block;
+        font-weight: bold;
+
+        transition: color 0.15s;
+
+        &:hover {
+            color: $col-blue;
+        }
+    }
+}
+
+li:hover>.header-submenu {
+    display: block;
+}

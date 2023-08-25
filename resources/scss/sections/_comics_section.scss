@@ -1,0 +1,17 @@
+/* -----------------------------------------
+* COMICS SECTION
+-------------------------------------------*/
+
+.comics-deck {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+
+    display: flex;
+    flex-wrap: wrap;
+
+
+    &>* {
+        margin-bottom: 1rem;
+        flex-basis: 25%;
+    }
+}

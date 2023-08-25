@@ -1,0 +1,25 @@
+/* -----------------------------------------
+* VARIABLES
+-------------------------------------------*/
+
+/*** COLORS ***/
+$col-dark: #1c1c1c;
+$col-light: #e3e3e3;
+$col-darkgray: #303030;
+$col-gray: #959595;
+$col-lightgray: #f6f6f6;
+
+$col-blue: #0282f9;
+$col-lightblue: #3fa1fd;
+$col-green: #55ba59;
+$col-lightgreen: #baf980;
+
+
+/*** BRAKPOINTS ***/
+$breakpoints: (
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px,
+    'xxl': 1400px
+);

@@ -1,0 +1,31 @@
+/* -----------------------------------------
+* COMIC CARD
+-------------------------------------------*/
+@use '../vars' as *;
+
+.comic-card {
+    padding: 0.75rem;
+
+    cursor: pointer;
+
+    &:hover {
+        color: $col-blue;
+    }
+
+    &:hover img {
+        filter: brightness(.8);
+    }
+
+    .card-img {
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+            object-fit: contain;
+            object-position: top;
+        }
+    }
+}

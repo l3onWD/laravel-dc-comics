@@ -1,0 +1,37 @@
+/* -----------------------------------------
+* HEADER MENU
+-------------------------------------------*/
+@use '../vars' as *;
+
+
+.header-menu {
+    display: flex;
+
+    &>li>a {
+        padding: 3rem 1rem;
+
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: bold;
+        font-stretch: 75%;
+        border-bottom: 4px solid transparent;
+        text-transform: uppercase;
+
+        transition: color 0.15s;
+
+
+        &.active,
+        &:hover {
+            color: $col-blue;
+            border-color: $col-blue;
+        }
+
+    }
+
+
+    /* Submenu */
+    .has-submenu {
+        position: relative;
+    }
+}

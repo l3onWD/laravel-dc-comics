@@ -1,0 +1,63 @@
+/* -----------------------------------------
+* CTA ICON
+-------------------------------------------*/
+@use '../vars' as *;
+
+.cta-nav {
+    border-top: 1px solid $col-light;
+
+    ul {
+        display: flex;
+
+        >* {
+            flex: 1;
+        }
+
+        a {
+            padding: 1rem;
+
+            display: flex;
+            justify-content: space-between;
+            border-left: 1px solid $col-light;
+
+            &:last-child {
+                border-right: 1px solid $col-light;
+            }
+
+            h4 {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .cta-icon {
+        width: 37px;
+        height: 37px;
+
+        background-image: url('/resources/img/cta-icons.png');
+        background-repeat: no-repeat;
+
+        transition: background-position-y 0.2s;
+
+
+        &.cta-digital {
+            background-position-x: 0;
+        }
+
+        &.cta-shop {
+            background-position-x: -37px;
+        }
+
+        &.cta-locator {
+            background-position-x: -74px;
+        }
+
+        &.cta-subscriptions {
+            background-position-x: -111px;
+        }
+    }
+
+    a:hover>.cta-icon {
+        background-position-y: -37px;
+    }
+}

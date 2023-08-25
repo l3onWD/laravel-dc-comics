@@ -1,1 +1,36 @@
-@import '~bootstrap/scss/bootstrap';
+/* -----------------------------------------
+* MAIN STYLE
+-------------------------------------------*/
+
+/*** BOOTSTRAP ***/
+@use '~bootstrap/scss/bootstrap';
+
+
+/*** BASIC ***/
+@use 'basics/fonts';
+@use 'basics/resets';
+@use 'basics/generics';
+@use 'basics/utils';
+@use 'basics/layout';
+@use 'basics/section';
+
+
+/*** COMPONENTS ***/
+@use 'components/btn';
+@use 'components/comic_card';
+@use 'components/cta_card';
+@use 'components/cta_nav';
+@use 'components/dropmenu';
+@use 'components/footer_menu';
+@use 'components/header_menu';
+@use 'components/header_search';
+@use 'components/header_submenu';
+@use 'components/social_bar';
+
+
+/*** SECTIONS ***/
+@use 'sections/comic_section';
+@use 'sections/comics_section';
+@use 'sections/cta_section';
+@use 'sections/footer';
+@use 'sections/header';

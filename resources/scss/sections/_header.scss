@@ -1,0 +1,42 @@
+/* -----------------------------------------
+* HEADER
+-------------------------------------------*/
+@use '../vars' as *;
+
+
+#main-header {
+
+    position: sticky;
+    top: -32px;
+
+    z-index: 1;
+    box-shadow: 0 0 8px 2px rgba($color: #000, $alpha: 0.09);
+
+    /* Header Top */
+    .header-top {
+        color: #fff;
+        background-color: $col-blue;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+
+    /* Header Bottom */
+    .header-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    /* Logo */
+    .header-logo {
+        padding: .5rem 0;
+
+        img {
+            width: 80px;
+
+            display: block
+        }
+    }
+}
