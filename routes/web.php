@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ComicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,28 +27,6 @@ Route::get('/', function () {
 * COMICS
 -------------------------------------------*/
 
-Route::get('/comics', function () {
-    $comics = config('data.comics');
-    $cta_cards = config('data.cta_cards');
+Route::get('/comics', [ComicController::class, 'index'])->name('comics.index');
 
-    return view('comics.index', ['comics' => $comics, 'cta_cards' => $cta_cards]);
-})->name('comics.index');
-
-
-
-/* -----------------------------------------
-* COMIC
--------------------------------------------*/
-Route::get('/comics/{index}', function ($index) {
-
-    $comics = config('data.comics');
-    $comic_actions_dropmenu = config('data.dropmenu_links')['comic_availability'];
-    $last_index = count($comics) - 1;
-
-    $data['comic'] = $comics[$index];
-    $data['comic_actions_dropmenu'] = $comic_actions_dropmenu;
-    if ($index > 0) $data['prev'] = $index - 1;
-    if ($index < $last_index) $data['next'] = $index + 1;
-
-    return view('comics.show', $data);
-})->name('comics.show');
+Route::get('/comics/{comic}', [ComicController::class, 'show'])->name('comics.show');

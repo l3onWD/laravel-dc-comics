@@ -8,7 +8,7 @@
     <header class="bg-blue">
         <div class="container py-1">
 
-            <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}" class="comic-image">
+            <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}" class="comic-image">
 
             {{-- Top Nav --}}
             <nav class="comic-navigation">
@@ -41,13 +41,13 @@
         {{-- Data --}}
         <div>
             {{-- Title --}}
-            <h2 class="mb-3">{{ $comic['title'] }}</h2>
+            <h2 class="mb-3">{{ $comic->title }}</h2>
 
             {{-- Disponibility --}}
             <div class="comic-disponibility text-right mb-2">
 
                 {{-- Price --}}
-                <p class="text-left">U.S. Price: <span class="text-white">{{ $comic['price'] }}</span></p>
+                <p class="text-left">U.S. Price: <span class="text-white">{{ $comic->price }}</span></p>
 
                 {{-- Status --}}
                 <p class="px-2">AVAILABLE</p>
@@ -60,7 +60,7 @@
             </div>
 
             {{-- Description --}}
-            <p>{{ $comic['description'] }}</p>
+            <p>{{ $comic->description }}</p>
 
         </div>
 
@@ -83,25 +83,11 @@
                 <ul>
                     <li>
                         <p class="comic-details-title">Art by:</p>
-                        <p class="comic-details-value">
-                            @foreach ($comic['artists'] as $artist)
-                                <a href="#">
-                                    {{ $artist }}
-                                    {{ $loop->last ? '' : ',' }}
-                                </a>
-                            @endforeach
-                        </p>
+                        <p class="comic-details-value">{{ $comic->artists }}</p>
                     </li>
                     <li>
                         <p class="comic-details-title">Written by:</p>
-                        <p class="comic-details-value">
-                            @foreach ($comic['writers'] as $writer)
-                                <a href="#">
-                                    {{ $writer }}
-                                    {{ $loop->last ? '' : ',' }}
-                                </a>
-                            @endforeach
-                        </p>
+                        <p class="comic-details-value">{{ $comic->writers }}</p>
                     </li>
                 </ul>
             </div>
@@ -113,16 +99,16 @@
                     <li>
                         <p class="comic-details-title">Series:</p>
                         <p class="comic-details-value">
-                            <a href="#">{{ $comic['series'] }}</a>
+                            <a href="#">{{ $comic->series }}</a>
                         </p>
                     </li>
                     <li>
                         <p class="comic-details-title">U.S. Price:</p>
-                        <p class="comic-details-value">{{ $comic['price'] }}</p>
+                        <p class="comic-details-value">{{ $comic->price }}</p>
                     </li>
                     <li>
                         <p class="comic-details-title">On Sale Date::</p>
-                        <p class="comic-details-value">{{ date('M d Y', strtotime($comic['sale_date'])) }}</p>
+                        <p class="comic-details-value">{{ date('M d Y', strtotime($comic->sale_date)) }}</p>
                     </li>
                 </ul>
             </div>
