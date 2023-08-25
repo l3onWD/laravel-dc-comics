@@ -48,6 +48,10 @@
         gap: 40px;
         font-weight: bold;
 
+        >*:first-child {
+            flex-grow: 1;
+        }
+
         h2 {
             font-size: 2.5rem;
         }
