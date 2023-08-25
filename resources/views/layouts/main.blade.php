@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
-    <title>@yield('page_title') - Laravel Comics</title>
+    <title>@yield('page_title') - {{ env('APP_NAME') }}</title>
 
     @vite('resources/js/app.js')
 </head>
