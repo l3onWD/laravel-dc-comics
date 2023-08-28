@@ -11,7 +11,7 @@
 
             <h2 class="mb-4">Add Comic</h2>
 
-            <form action="{{ route('comics.update') }}" method="POST">
+            <form action="{{ route('comics.update', $comic) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="row">
