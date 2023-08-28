@@ -48,7 +48,7 @@
             <div>
                 {{-- Actions --}}
                 <div class="py-2 mb-3">
-                    <a href="{{ route('comics.create') }}" class="btn btn-warning">Edit Comic</a>
+                    <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning">Edit Comic</a>
                 </div>
 
                 {{-- Title --}}
