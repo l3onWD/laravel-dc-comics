@@ -1,8 +1,8 @@
 <?php
 return [
     [
-        'text' => 'Characters',
-        'route' => '#'
+        'text' => 'Home',
+        'route' => 'home'
     ],
     [
         'text' => 'Comics',
@@ -26,14 +26,6 @@ return [
     ],
     [
         'text' => 'Videos',
-        'route' => '#'
-    ],
-    [
-        'text' => 'Fans',
-        'route' => '#'
-    ],
-    [
-        'text' => 'News',
         'route' => '#'
     ],
     [
