@@ -31,11 +31,27 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        // Validation
+        $request->validate(
+            [
+                'title' => 'required|string|max:50',
+                'description' => 'nullable',
+                'thumb' => 'required|url',
+                'price' => 'numeric|min:0',
+                'series' => 'required|string|max:50',
+                'sale_date' => 'required|date',
+                'type' => 'required|string|max:30',
+                'artists' => 'string|max:255|nullable',
+                'writers' => 'string|max:255|nullable'
+            ]
+        );
 
+        // Save Data
+        $data = $request->all();
         $comic = new Comic();
         $comic->fill($data);
         $comic->save();
+
 
         return to_route('comics.index');
     }
