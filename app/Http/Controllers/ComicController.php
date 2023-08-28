@@ -35,7 +35,6 @@ class ComicController extends Controller
 
         $comic = new Comic();
         $comic->fill($data);
-        $comic->price = "$$comic->price";
         $comic->save();
 
         return to_route('comics.index');

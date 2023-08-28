@@ -58,7 +58,7 @@
                 <div class="comic-disponibility text-right mb-2">
 
                     {{-- Price --}}
-                    <p class="text-left">U.S. Price: <span class="text-white">{{ $comic->price }}</span></p>
+                    <p class="text-left">U.S. Price: <span class="text-white">${{ $comic->price }}</span></p>
 
                     {{-- Status --}}
                     <p class="px-2">AVAILABLE</p>
