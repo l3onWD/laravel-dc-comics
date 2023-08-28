@@ -34,13 +34,13 @@ class ComicController extends Controller
         // Validation
         $request->validate(
             [
-                'title' => 'string|max:50',
+                'title' => 'required|string|max:50',
                 'description' => 'nullable',
-                'thumb' => 'url',
+                'thumb' => 'required|url',
                 'price' => 'numeric|min:0',
-                'series' => 'string|max:50',
-                'sale_date' => 'date',
-                'type' => 'string|max:30',
+                'series' => 'required|string|max:50',
+                'sale_date' => 'required|date',
+                'type' => 'required|string|max:30',
                 'artists' => 'string|max:255|nullable',
                 'writers' => 'string|max:255|nullable'
             ]
