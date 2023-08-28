@@ -87,7 +87,7 @@
                     </div>
 
                     <div class="col-12 text-end">
-                        <button class="btn btn-primary">Create</button>
+                        <button class="btn btn-primary">Edit</button>
                     </div>
                 </div>
             </form>
