@@ -18,6 +18,7 @@ class ComicSeeder extends Seeder
         foreach ($comics_data as $data) {
 
             // Normalize data
+            $data['price'] = str_replace('$', '', $data['price']);
             $data['artists'] = implode(', ', $data['artists']);
             $data['writers'] = implode(', ', $data['writers']);
 
