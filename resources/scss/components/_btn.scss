@@ -41,4 +41,16 @@
             background-color: $col-blue;
         }
     }
+
+    &.btn-warning {
+        color: #fff;
+        background-color: $col-green;
+
+        transition: background-color 0.15s;
+
+        &:hover {
+            color: #000;
+            background-color: $col-lightgreen;
+        }
+    }
 }
