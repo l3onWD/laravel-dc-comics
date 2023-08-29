@@ -11,6 +11,7 @@ export default defineConfig({
             input: [
                 'resources/scss/app.scss',
                 'resources/js/app.js',
+                'resources/js/comic-image-preview.js',
                 'resources/js/modal-delete.js'
             ],
             refresh: true,
