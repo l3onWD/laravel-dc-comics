@@ -66,13 +66,19 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        $comics = Comic::all();
-        $comic_actions_dropmenu = config('data.dropmenu_links')['comic_availability'];
-        $last_index = count($comics);
+        // Set Comic Data
         $data['comic'] = $comic;
+
+        // Set Navigational Data
+        $previous = Comic::where('id', '<', $comic->id)->max('id');
+        $next = Comic::where('id', '>', $comic->id)->min('id');
+        if ($previous) $data['prev'] = $previous;
+        if ($next) $data['next'] = $next;
+
+        // Set Dropmenu Data
+        $comic_actions_dropmenu = config('data.dropmenu_links')['comic_availability'];
         $data['comic_actions_dropmenu'] = $comic_actions_dropmenu;
-        if ($comic->id > 1) $data['prev'] = $comic->id - 1;
-        if ($comic->id < $last_index) $data['next'] = $comic->id + 1;
+
 
         return view('comics.show', $data);
     }
