@@ -45,14 +45,28 @@
 
                     <div class="col-12">
                         <div class="mb-3">
-                            <label for="thumb" class="form-label">Image</label>
-                            <input type="url" class="form-control @error('thumb') is-invalid @enderror" id="thumb"
-                                name="thumb" placeholder="Comic Image Url" value="{{ old('thumb') }}">
-                            @error('thumb')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
+                            <div class="row">
+
+                                {{-- url --}}
+                                <div class="col-10">
+                                    <label for="thumb" class="form-label">Image</label>
+                                    <input type="url" class="form-control @error('thumb') is-invalid @enderror"
+                                        id="thumb" name="thumb" placeholder="Comic Image Url"
+                                        value="{{ old('thumb') }}">
+                                    @error('thumb')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
-                            @enderror
+
+                                {{-- Preview --}}
+                                <div class="col-2">
+                                    <img id="preview-image"
+                                        src="{{ old('thumb', 'https://marcolanci.it/utils/placeholder.jpg') }}"
+                                        alt="preview" class="img-fluid">
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -140,4 +154,10 @@
                 </div>
             </form>
         </div>
-    @endsection
+    </section>
+@endsection
+
+
+@section('scripts')
+    @vite('resources/js/comic-image-preview.js')
+@endsection

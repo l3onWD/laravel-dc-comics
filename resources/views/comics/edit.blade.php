@@ -55,6 +55,11 @@
                                     <input type="url" class="form-control @error('thumb') is-invalid @enderror"
                                         id="thumb" name="thumb" placeholder="Comic Image Url"
                                         value="{{ old('thumb', $comic->thumb) }}">
+                                    @error('thumb')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
                                 {{-- Preview --}}
@@ -64,11 +69,7 @@
                                         alt="preview" class="img-fluid">
                                 </div>
                             </div>
-                            @error('thumb')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+
                         </div>
                     </div>
 
