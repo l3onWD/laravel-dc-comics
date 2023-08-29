@@ -23,7 +23,10 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('comics.create');
+        // Create an empty comic for the centralized form
+        $comic = new Comic();
+
+        return view('comics.create', compact('comic'));
     }
 
     /**
