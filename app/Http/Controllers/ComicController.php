@@ -56,7 +56,9 @@ class ComicController extends Controller
         $comic->save();
 
 
-        return to_route('comics.index');
+        return to_route('comics.index')
+            ->with('alert-message', "$comic->title created successfully")
+            ->with('alert-type', 'success');
     }
 
     /**
@@ -106,7 +108,9 @@ class ComicController extends Controller
         // Update Data
         $data = $request->all();
         $comic->update($data);
-        return to_route('comics.show', $comic);
+        return to_route('comics.show', $comic)
+            ->with('alert-message', "$comic->title updated successfully")
+            ->with('alert-type', 'success');
     }
 
     /**
