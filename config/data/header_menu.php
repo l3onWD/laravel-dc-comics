@@ -2,47 +2,58 @@
 return [
     [
         'text' => 'Home',
-        'route' => 'home'
+        'route' => 'home',
+        'domain' => 'home*'
     ],
     [
         'text' => 'Comics',
-        'route' => 'comics.index'
+        'route' => 'comics.index',
+        'domain' => 'comics*'
     ],
     [
         'text' => 'Movies',
-        'route' => '#'
+        'route' => '#',
+        'domain' => '#'
     ],
     [
         'text' => 'Tv',
-        'route' => '#'
+        'route' => '#',
+        'domain' => '#'
     ],
     [
         'text' => 'Games',
-        'route' => '#'
+        'route' => '#',
+        'domain' => '#'
     ],
     [
         'text' => 'Collectibles',
-        'route' => '#'
+        'route' => '#',
+        'domain' => '#'
     ],
     [
         'text' => 'Videos',
-        'route' => '#'
+        'route' => '#',
+        'domain' => '#'
     ],
     [
         'text' => 'Shop',
         'route' => '#',
+        'domain' => '#',
         'submenu' => [
             [
                 'text' => 'Sub 01',
-                'route' => '#'
+                'route' => '#',
+                'domain' => '#'
             ],
             [
                 'text' => 'Sub 02',
-                'route' => '#'
+                'route' => '#',
+                'domain' => '#'
             ],
             [
                 'text' => 'Sub 03',
-                'route' => '#'
+                'route' => '#',
+                'domain' => '#'
             ]
         ]
     ]

@@ -4,7 +4,7 @@
 
             {{-- Main Link --}}
             <a href="{{ $link['route'] !== '#' ? route($link['route']) : $link['route'] }}"
-                class="{{ Route::is($link['route']) ? 'active' : '' }}">
+                class="{{ Route::is($link['domain']) ? 'active' : '' }}">
                 {{ $link['text'] }}
                 @if (isset($link['submenu']))
                     <i class="fas fa-caret-down text-blue"></i>
