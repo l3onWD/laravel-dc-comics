@@ -53,4 +53,15 @@
             background-color: $col-lightgreen;
         }
     }
+
+    &.btn-danger {
+        color: #fff;
+        background-color: $col-red;
+
+        transition: background-color 0.15s;
+
+        &:hover {
+            background-color: $col-lightred;
+        }
+    }
 }

@@ -36,4 +36,5 @@ Route::prefix('/comics')
         Route::get('/{comic}/edit', 'edit')->name('edit');
         Route::post('/', 'store')->name('store');
         Route::put('/{comic}', 'update')->name('update');
+        Route::delete('/{comic}', 'destroy')->name('destroy');
     });

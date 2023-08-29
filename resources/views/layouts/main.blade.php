@@ -19,13 +19,22 @@
 
 <body>
 
+    {{-- Header --}}
     @include('includes.sections.header')
 
+    {{-- Page Alerts --}}
+    @include('includes.components.alert')
+
+    {{-- Main Content --}}
     <main class="text-white">
         @yield('main-content')
     </main>
 
+    {{-- Footer --}}
     @include('includes.sections.footer')
+
+    {{-- Scripts --}}
+    @yield('scripts')
 
 </body>
 
