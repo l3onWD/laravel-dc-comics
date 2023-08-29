@@ -44,11 +44,26 @@
                         </div>
                     </div>
 
+                    {{-- Comic Image --}}
                     <div class="col-12">
                         <div class="mb-3">
-                            <label for="thumb" class="form-label">Image</label>
-                            <input type="url" class="form-control @error('thumb') is-invalid @enderror" id="thumb"
-                                name="thumb" placeholder="Comic Image Url" value="{{ old('thumb', $comic->thumb) }}">
+                            <div class="row">
+
+                                {{-- url --}}
+                                <div class="col-10">
+                                    <label for="thumb" class="form-label">Image</label>
+                                    <input type="url" class="form-control @error('thumb') is-invalid @enderror"
+                                        id="thumb" name="thumb" placeholder="Comic Image Url"
+                                        value="{{ old('thumb', $comic->thumb) }}">
+                                </div>
+
+                                {{-- Preview --}}
+                                <div class="col-2">
+                                    <img id="preview-image"
+                                        src="{{ old('thumb', $comic->thumb ?? 'https://marcolanci.it/utils/placeholder.jpg') }}"
+                                        alt="preview" class="img-fluid">
+                                </div>
+                            </div>
                             @error('thumb')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -57,6 +72,7 @@
                         </div>
                     </div>
 
+                    {{-- Comic Price --}}
                     <div class="col-6">
                         <div class="mb-3">
                             <label for="price" class="form-label">Price</label>
@@ -71,6 +87,7 @@
                         </div>
                     </div>
 
+                    {{-- Comic Series --}}
                     <div class="col-6">
                         <div class="mb-3">
                             <label for="series" class="form-label">Series</label>
@@ -84,6 +101,7 @@
                         </div>
                     </div>
 
+                    {{-- Comic Sale Date --}}
                     <div class="col-6">
                         <div class="mb-3">
                             <label for="sale-date" class="form-label">Sale Date</label>
@@ -97,6 +115,7 @@
                         </div>
                     </div>
 
+                    {{-- Comic Type --}}
                     <div class="col-6">
                         <div class="mb-3">
                             <label for="type" class="form-label">Type</label>
@@ -110,6 +129,7 @@
                         </div>
                     </div>
 
+                    {{-- Comic Artists --}}
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="artists" class="form-label">Artists</label>
@@ -123,6 +143,7 @@
                         </div>
                     </div>
 
+                    {{-- Comic Writers --}}
                     <div class="col-12">
                         <div class="mb-5">
                             <label for="writers" class="form-label">Writers</label>
@@ -137,10 +158,17 @@
                         </div>
                     </div>
 
-                    <div class="col-12 text-end">
+                    {{-- Actions --}}
+                    <div class="col-12 d-flex justify-content-end">
+                        <a href="{{ route('comics.show', $comic) }}" class="btn btn-warning me-2">Cancel</a>
                         <button class="btn btn-primary">Edit</button>
                     </div>
                 </div>
             </form>
         </div>
-    @endsection
+    </section>
+@endsection
+
+@section('scripts')
+    @vite('resources/js/comic-image-preview.js')
+@endsection
