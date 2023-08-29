@@ -33,6 +33,9 @@
     {{-- Footer --}}
     @include('includes.sections.footer')
 
+    {{-- Modal --}}
+    @include('includes.components.modal')
+
     {{-- Scripts --}}
     @yield('scripts')
 
