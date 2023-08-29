@@ -49,7 +49,8 @@
                 {{-- Actions --}}
                 <div class="d-flex py-2 mb-3">
                     <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning me-2">Edit</a>
-                    <form method="POST" action="{{ route('comics.destroy', $comic) }}" data-name="{{ $comic->title }}">
+                    <form method="POST" action="{{ route('comics.destroy', $comic) }}" class="delete-form"
+                        data-name="{{ $comic->title }}">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger">Delete</button>
@@ -167,4 +168,9 @@
 
     </section>
 
+@endsection
+
+
+@section('scripts')
+    @vite('resources/js/modal-delete.js')
 @endsection
