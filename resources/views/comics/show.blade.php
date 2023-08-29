@@ -121,7 +121,7 @@
                         </li>
                         <li>
                             <p class="comic-details-title">U.S. Price:</p>
-                            <p class="comic-details-value">{{ $comic->price }}</p>
+                            <p class="comic-details-value">${{ $comic->price }}</p>
                         </li>
                         <li>
                             <p class="comic-details-title">On Sale Date::</p>

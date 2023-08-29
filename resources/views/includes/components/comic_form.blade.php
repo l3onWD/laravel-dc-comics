@@ -146,10 +146,11 @@
         <div class="col-12 d-flex justify-content-end">
             @if ($comic->exists)
                 <a href="{{ route('comics.show', $comic) }}" class="btn btn-warning me-2">Cancel</a>
+                <button class="btn btn-primary">Edit</button>
             @else
                 <a href="{{ route('comics.index') }}" class="btn btn-warning me-2">Cancel</a>
+                <button class="btn btn-primary">Add</button>
             @endif
-            <button class="btn btn-primary">Edit</button>
         </div>
     </div>
 </form>
